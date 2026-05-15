@@ -1,0 +1,20 @@
+=== Starting evaluation ===
+Node: node1
+GPU: NVIDIA H100 NVL, 95830 MiB
+Time: Friday 15 May 2026 03:50:12 PM IST
+[EPRVFLWrapper] Running in STUB mode — mock predictions only.
+[MistralLoRAWrapper] Loading politifact checkpoint...
+[MistralLoRAWrapper] Loaded. Labels: {0: 'FAKE', 1: 'REAL'}
+
+Dataset      | Accuracy | F1       | Precision | Recall  
+------------------------------------------------------------
+[RAG] Vector store loaded.
+politifact   | acc=0.3673 | f1=0.3922 | prec=0.4348 | rec=0.3571
+gossipcop    | acc=0.7850 | f1=0.8677 | prec=0.8150 | rec=0.9276
+welfake      | acc=0.8750 | f1=0.8619 | prec=0.8571 | rec=0.8667
+buzzfeed     | acc=0.3333 | f1=0.5000 | prec=0.4000 | rec=0.6667
+liar2        | acc=0.6550 | f1=0.2887 | prec=0.2917 | rec=0.2857
+fake_real    | acc=0.3871 | f1=0.5309 | prec=0.6515 | rec=0.4479
+
+Saved to results/agent_eval.json
+=== Done: Friday 15 May 2026 03:51:12 PM IST ===

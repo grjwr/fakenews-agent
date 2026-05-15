@@ -1,0 +1,3 @@
+[EPRVFLWrapper] Running in STUB mode — mock predictions only.
+[MistralLoRAWrapper] Loading politifact checkpoint...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]slurmstepd: error: *** JOB 23589 ON node2 CANCELLED AT 2026-05-15T15:42:23 ***

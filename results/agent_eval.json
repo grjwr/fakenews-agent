@@ -1,0 +1,50 @@
+[
+  {
+    "dataset": "politifact",
+    "samples": 98,
+    "accuracy": 0.3571,
+    "f1": 0.3883,
+    "precision": 0.4255,
+    "recall": 0.3571
+  },
+  {
+    "dataset": "gossipcop",
+    "samples": 100,
+    "accuracy": 0.82,
+    "f1": 0.8916,
+    "precision": 0.8409,
+    "recall": 0.9487
+  },
+  {
+    "dataset": "welfake",
+    "samples": 100,
+    "accuracy": 0.85,
+    "f1": 0.8387,
+    "precision": 0.8667,
+    "recall": 0.8125
+  },
+  {
+    "dataset": "buzzfeed",
+    "samples": 18,
+    "accuracy": 0.3333,
+    "f1": 0.5,
+    "precision": 0.4,
+    "recall": 0.6667
+  },
+  {
+    "dataset": "liar2",
+    "samples": 100,
+    "accuracy": 0.66,
+    "f1": 0.2609,
+    "precision": 0.2609,
+    "recall": 0.2609
+  },
+  {
+    "dataset": "fake_real",
+    "samples": 100,
+    "accuracy": 0.37,
+    "f1": 0.5039,
+    "precision": 0.64,
+    "recall": 0.4156
+  }
+]

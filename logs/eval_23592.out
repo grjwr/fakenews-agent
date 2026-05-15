@@ -1,0 +1,13 @@
+=== Starting evaluation ===
+Node: node1
+GPU: NVIDIA H100 NVL, 95830 MiB
+Time: Friday 15 May 2026 03:54:15 PM IST
+
+Dataset      | Accuracy | F1       | Precision | Recall  
+------------------------------------------------------------
+[EPRVFLWrapper] Running in STUB mode — mock predictions only.
+[MistralLoRAWrapper] Loading politifact checkpoint...
+[MistralLoRAWrapper] Loaded. Labels: {0: 'FAKE', 1: 'REAL'}
+
+Loading politifact checkpoint...
+[MistralLoRAWrapper] Loading politifact checkpoint...

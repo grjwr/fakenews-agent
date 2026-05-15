@@ -2,11 +2,11 @@ import os
 
 CHECKPOINT_MAP = {
     "politifact": "/home/akumar/llm_fakenews/mistral_output/mistral_politifact_20260513_2357/checkpoint-555",
-    "gossipcop":  "/home/akumar/llm_fakenews/mistral_output/mistral_gossipcop_20260514_0000/checkpoint-37578",
+    "gossipcop":  "/home/akumar/llm_fakenews/mistral_output/mistral_gossipcop_20260514_0000/checkpoint-11625",
     "welfake":    "/home/akumar/llm_fakenews/mistral_output/mistral_welfake_20260514_0026/checkpoint-25052",
-    "buzzfeed":   "/home/akumar/llm_fakenews/mistral_output/mistral_buzzfeed_20260514_0202",
-    "liar2":      "/home/akumar/llm_fakenews/mistral_output/mistral_liar2_20260514_0203",
-    "fake_real":  "/home/akumar/llm_fakenews/mistral_output/mistral_fake_real_20260514_0935",
+    "buzzfeed":   "/home/akumar/llm_fakenews/mistral_output/mistral_buzzfeed_20260514_0202/checkpoint-96",
+    "liar2":      "/home/akumar/llm_fakenews/mistral_output/mistral_liar2_20260514_0203/checkpoint-12057",
+    "fake_real":  "/home/akumar/llm_fakenews/mistral_output/mistral_fake_real_20260514_0935/checkpoint-2412",
 }
 
 # 0=FAKE, 1=REAL — matches your training script (verdict column)
