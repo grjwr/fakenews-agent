@@ -5,3 +5,4 @@ tavily-python==0.3.3
 faiss-cpu==1.13.2
 sentence-transformers==3.0.1
 gradio
+peft

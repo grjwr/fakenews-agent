@@ -4,7 +4,7 @@ from agent.models.eprvfl_wrapper import EPRVFLWrapper
 from agent.models.mistral_wrapper import MistralLoRAWrapper
 
 eprvfl  = EPRVFLWrapper.load()
-mistral = MistralLoRAWrapper.load_real(dataset="politifact")
+mistral = MistralLoRAWrapper.load_stub(dataset="politifact")
 
 def claim_router(state: AgentState) -> AgentState:
     state["route"]    = "fast"
