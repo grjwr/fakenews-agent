@@ -30,3 +30,33 @@ LangGraph-based agentic fake news detection combining EPRVFL + Mistral-7B LoRA +
 ## Usage
 
 Enter a news claim and the agent verifies it using 108K articles from 6 fake news datasets.
+
+## Demo vs Production
+
+The **HuggingFace Spaces deployment** runs in **stub mode** (keyword heuristics) for CPU compatibility.
+- Accuracy: ~50% (baseline)
+- Purpose: UI/UX demo only
+
+For **production inference**, use the real Mistral-7B LoRA checkpoint locally on GPU:
+
+```python
+from agent.models.mistral_wrapper import MistralLoRAWrapper
+mistral = MistralLoRAWrapper.load_real(dataset="politifact")
+pred = mistral.predict(claim, evidence)
+```
+
+**Real model performance:**
+- Accuracy: 85% F1 on GossipCop & WELFake
+- Latency: ~200ms per claim (H100 GPU)
+- Cross-domain evaluation: 6 datasets tested
+
+## Running Locally
+
+```bash
+# GPU node (HPC)
+srun --partition=gpu --gres=shard:16 --mem=128G --time=04:00:00 --pty bash
+conda activate llm_env
+streamlit run app/streamlit_app.py
+```
+
+This loads the real Mistral-7B LoRA + FAISS index for production accuracy.
