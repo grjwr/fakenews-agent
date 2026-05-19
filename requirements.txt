@@ -6,6 +6,6 @@ faiss-cpu==1.13.2
 sentence-transformers==3.0.1
 fastapi==0.112.2
 uvicorn==0.30.6
-torch==2.1.0
+torch>=2.5.0
 transformers==4.44.2
 peft==0.12.0
