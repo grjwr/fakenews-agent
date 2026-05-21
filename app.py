@@ -16,7 +16,15 @@ if not os.path.exists('data/fakenews_index/index.faiss'):
 from agent.graph import graph
 from agent.state import AgentState
 
+# Header with author details at TOP
 st.title("🔍 Fake News Claim Verifier")
+st.markdown("""
+**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | 
+**Paper:** EPRVFL in Pattern Recognition Letters 2025 | 
+[GitHub](https://github.com/grjwr/fakenews-agent) | 
+[Scholar Profile](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)
+""")
+st.markdown("---")
 st.caption("EPRVFL + Mistral-7B LoRA + RAG over 108K articles")
 
 # Example claims
@@ -54,7 +62,7 @@ with col2:
 
 st.markdown("---")
 
-# Text input (auto-filled when example clicked)
+# Text input
 claim = st.text_area(
     "Enter a news claim or click an example above:",
     value=st.session_state.get("claim", ""),
@@ -89,9 +97,4 @@ if st.button("🔍 Verify Claim", type="primary"):
 
 # Footer
 st.markdown("---")
-st.caption(
-    "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
-    "**Paper:** EPRVFL in Pattern Recognition Letters 2025 | "
-    "[GitHub](https://github.com/grjwr/fakenews-agent) | "
-    "[Scholar Profile](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
-)
+st.caption("© 2025 Rajiv Kumar Gurjwar | SVNIT Surat | MIT License")
