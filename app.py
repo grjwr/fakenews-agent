@@ -38,6 +38,7 @@ if st.button("Verify", type="primary"):
                 
                 color = {"FAKE": "🔴", "REAL": "🟢"}
                 icon = color.get(v['label'], "⚪")
+
                 st.subheader(f"{icon} **{v['label']}** ({v['confidence']:.0%})")
                 st.metric("Model", v['model_used'])
                 
@@ -51,24 +52,7 @@ if st.button("Verify", type="primary"):
             except Exception as e:
                 st.error(f"Error: {e}")
 
-# Add citation footer
-st.markdown("---")
-st.caption(
-    "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
-    "**Paper:** EPRVFL in Pattern Recognition Letters 2025 | "
-    "[GitHub](https://github.com/grjwr/fakenews-agent) | "
-    "[Scholar Profile](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
-)
-
-st.markdown("---")
-st.caption(
-    "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
-    "[GitHub](https://github.com/grjwr/fakenews-agent) | "
-    "[Paper](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
-)
-
-
-# Footer with author attribution
+# Single footer with author attribution
 st.markdown("---")
 st.caption(
     "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
