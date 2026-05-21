@@ -67,3 +67,12 @@ st.caption(
     "[Paper](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
 )
 
+
+# Footer with author attribution
+st.markdown("---")
+st.caption(
+    "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
+    "**Paper:** EPRVFL in Pattern Recognition Letters 2025 | "
+    "[GitHub](https://github.com/grjwr/fakenews-agent) | "
+    "[Scholar Profile](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
+)
