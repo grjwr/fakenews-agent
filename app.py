@@ -19,13 +19,53 @@ from agent.state import AgentState
 st.title("🔍 Fake News Claim Verifier")
 st.caption("EPRVFL + Mistral-7B LoRA + RAG over 108K articles")
 
-claim = st.text_area("Enter a news claim:", height=100)
+# Example claims
+st.markdown("#### 💡 Try these examples:")
 
-if st.button("Verify", type="primary"):
+FAKE_EXAMPLES = [
+    "COVID vaccines contain microchips planted by Bill Gates",
+    "5G towers are spreading coronavirus to control population",
+    "The moon landing was staged by NASA in a Hollywood studio",
+    "Drinking bleach cures cancer according to new research",
+    "George Soros is funding Antifa to destabilize America",
+]
+
+REAL_EXAMPLES = [
+    "Scientists confirm climate change is accelerating glacial melting",
+    "WHO reports global vaccination rates have improved child mortality",
+    "U.S. Federal Reserve raises interest rates to combat inflation",
+    "Study shows Mediterranean diet reduces risk of heart disease",
+    "NASA confirms water ice found on the Moon's south pole",
+]
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("🔴 **Likely Fake**")
+    for example in FAKE_EXAMPLES:
+        if st.button(example[:60] + "...", key=f"fake_{example[:20]}"):
+            st.session_state.claim = example
+
+with col2:
+    st.markdown("🟢 **Likely Real**")
+    for example in REAL_EXAMPLES:
+        if st.button(example[:60] + "...", key=f"real_{example[:20]}"):
+            st.session_state.claim = example
+
+st.markdown("---")
+
+# Text input (auto-filled when example clicked)
+claim = st.text_area(
+    "Enter a news claim or click an example above:",
+    value=st.session_state.get("claim", ""),
+    height=100
+)
+
+if st.button("🔍 Verify Claim", type="primary"):
     if not claim or len(claim) < 10:
         st.warning("Please enter a longer claim")
     else:
-        with st.spinner("Analyzing..."):
+        with st.spinner("Agent is analyzing the claim..."):
             state: AgentState = {
                 "claim": claim, "messages": [], "evidence": [],
                 "eprvfl_result": None, "mistral_result": None,
@@ -36,18 +76,18 @@ if st.button("Verify", type="primary"):
                 v = result["verdict"]
                 color = {"FAKE": "🔴", "REAL": "🟢"}
                 icon = color.get(v['label'], "⚪")
-                st.subheader(f"{icon} **{v['label']}** ({v['confidence']:.0%})")
-                st.metric("Model", v['model_used'])
-                with st.expander("Evidence"):
+                st.subheader(f"{icon} Verdict: **{v['label']}** ({v['confidence']:.0%} confidence)")
+                st.metric("Model Used", v['model_used'])
+                with st.expander("📄 Evidence Retrieved"):
                     for snip in v.get('evidence_snippets', []):
                         st.write(f"• {snip}")
-                with st.expander("Sources"):
+                with st.expander("🔗 Sources"):
                     for src in v.get('sources', []):
                         st.write(f"- {src}")
             except Exception as e:
                 st.error(f"Error: {e}")
 
-# Footer - always visible
+# Footer
 st.markdown("---")
 st.caption(
     "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
