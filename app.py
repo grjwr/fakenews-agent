@@ -59,3 +59,11 @@ st.caption(
     "[GitHub](https://github.com/grjwr/fakenews-agent) | "
     "[Scholar Profile](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
 )
+
+st.markdown("---")
+st.caption(
+    "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
+    "[GitHub](https://github.com/grjwr/fakenews-agent) | "
+    "[Paper](https://scholar.google.com/citations?user=_3_1ExAAAAAJ)"
+)
+
