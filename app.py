@@ -6,7 +6,6 @@ import streamlit as st
 
 # Download FAISS index if not present
 if not os.path.exists('data/fakenews_index/index.faiss'):
-    print("Downloading FAISS index from HF Datasets...")
     from huggingface_hub import hf_hub_download
     os.makedirs('data/fakenews_index', exist_ok=True)
     hf_hub_download(repo_id="grjwr/fakenews-agent-data", filename="index.faiss",
@@ -48,7 +47,7 @@ if st.button("Verify", type="primary"):
             except Exception as e:
                 st.error(f"Error: {e}")
 
-# Footer - outside button block, always visible
+# Footer - always visible
 st.markdown("---")
 st.caption(
     "**Author:** Rajiv Kumar Gurjwar (SVNIT Surat) | "
