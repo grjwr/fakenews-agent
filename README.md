@@ -47,7 +47,7 @@ LangGraph-based agentic fake news verification combining EPRVFL + Mistral-7B LoR
 ## Repository
 
 **Code:** https://github.com/grjwr/fakenews-agent  
-**Vector Index:** https://huggingface.co/datasets/grjwr/fakenews-agent-data
+**Live Demo:** [https://huggingface.co/datasets/grjwr/fakenews-agent-data](https://huggingface.co/spaces/grjwr/fakenews-agent)
 
 ## Citation
 
