@@ -54,7 +54,7 @@ LangGraph-based agentic fake news verification combining EPRVFL + Mistral-7B LoR
 ```bibtex
 @article{gurjwar2025eprvfl,
   title={EPRVFL: A fast and scalable model for real-time fake news detection},
-  author={Gurjwar, Rajiv Kumar and Kumar, Arun and Rao, Uday Pratap},
+  author={Gurjwar, Rajiv Kumar and Kumar, Alok and Rao, Uday Pratap},
   journal={Pattern Recognition Letters},
   volume={196},
   pages={267--273},
